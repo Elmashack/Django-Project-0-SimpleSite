@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Set your goals here
+{% endblock %}
+
+{% block content %}
+    <h2>Goals lead to the top</h2>
+    <form method="POST" class="mt-4">
+        {% csrf_token %}
+        {{ key_form.title}}<br>
+        {{ key_form.description }}<br>
+        <button type="submit" class="btn btn-success">Set</button>
+        <span style="color:red">{{ err }}</span>
+    </form>
+<br><br>
+    <p>You can find more information by clicking here</p>
+{% endblock %}
